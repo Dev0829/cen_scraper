@@ -40,13 +40,6 @@ class CentrisProductsSpider(BaseProduct):
     title_list = {}
     i = 0
     def start_requests(self):
-        # for url in self.start_urls:
-        #     yield Request(
-        #         url=self._clean_text(url),
-        #         meta={'start_position': 0, 'url': url},
-        #         callback=self._start_requests,
-        #         dont_filter=True
-        #     )
         yield Request(
             url=self.start_urls[0],
             meta={'start_position': 0, 'url': self.start_urls[0], 'next_urls': self.start_urls[1:]},
